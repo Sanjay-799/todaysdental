@@ -12,7 +12,7 @@ function HomePage() {
     dots: true,
     infinite: true,
     autoplay: true,
-    speed: 500,
+    speed: 200,
     slidesToShow: 1,
     slidesToScroll: 1,
   };
@@ -61,29 +61,39 @@ function HomePage() {
           </p>
         </section>
 
-        <section className="services-overview py-5 text-center">
-          <h2>Our Core Dental Services</h2>
-          <p className="mb-4">
-            We offer a full range of dental services using modern technology to
-            help you maintain a healthy and confident smile.
+        <section
+          className="services-overview py-5 text-center"
+          style={{ backgroundColor:"#f8f9fa", padding:"60px 0" }} >
+          <h2 style={{ fontSize:"2.5rem", fontWeight:"700", marginBottom:"20px" }}>
+            Our Core Dental Services
+          </h2>
+          <p className="mb-5"
+            style={{ fontSize:"1.1rem", color:"#666", maxWidth:"700px", margin: "0 auto" }} >
+            We offer a full range of dental services using modern technology to help you maintain a healthy and confident smile.
           </p>
+
           <div className="container">
             <div className="row">
               {services.map((service) => (
                 <div className="col-md-4 mb-4" key={service.id}>
-                  <h5 style={{ marginBottom: "10px", fontWeight: "600" }}>
-                    {service.name}
-                  </h5>
-                  <p style={{ fontSize: "16px", color: "#555" }}>
-                    {service.description}
-                  </p>
+                  <div
+                    className="p-4 h-100"
+                    style={{
+                      backgroundColor: "#ffffff",
+                      borderRadius: "12px",
+                      boxShadow: "0 4px 12px rgba(0, 0, 0, 0.05)",
+                      transition:"transform 0.3s ease",
+                    }}>
+                    <h5 style={{ marginBottom:"15px",fontWeight:"600", color:"#0d6efd" }}>
+                      {service.name}
+                    </h5>
+                    <p style={{fontSize:"1rem", color:"#555"}}>{service.description}</p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
-
-      
         <section className="faq-section py-5">
           <h2 className="text-center mb-4">Frequently Asked Questions</h2>
           <Accordion defaultActiveKey="0">
